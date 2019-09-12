@@ -45,11 +45,15 @@ import org.xml.sax.SAXParseException;
  * @author Kazuki Shimizu
  */
 public class XPathParser {
-
+  //xml document 对象
   private final Document document;
+  //是否校验
   private boolean validation;
+  //xml 实体解析器
   private EntityResolver entityResolver;
+  //变量 properties 对象
   private Properties variables;
+  //xpath 对象
   private XPath xpath;
 
   public XPathParser(String xml) {
@@ -226,8 +230,18 @@ public class XPathParser {
       throw new BuilderException("Error evaluating XPath.  Cause: " + e, e);
     }
   }
-
+  /**
+   * @MethodName createDocument
+   * @Description 将流文件转换成document文件对象
+   * @param: inputSource
+   * @Return org.w3c.dom.Document
+   * @Throw
+   * @Author huyongpeng <704725075@qq.com>
+   * @Version V1.0.0
+   * @Since 2019/9/12
+   */
   private Document createDocument(InputSource inputSource) {
+
     // important: this must only be called AFTER common constructor
     try {
       DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
