@@ -222,7 +222,18 @@ public class XPathParser {
     }
     return new XNode(this, node, variables);
   }
-
+  /**
+   * @MethodName evaluate
+   * @Description 获取指定元素得节点集
+   * @param: expression
+   * @param: root
+   * @param: returnType
+   * @Return java.lang.Object
+   * @Throw
+   * @Author huyongpeng <704725075@qq.com>
+   * @Version V1.0.0
+   * @Since 2019/9/12
+   */
   private Object evaluate(String expression, Object root, QName returnType) {
     try {
       return xpath.evaluate(expression, root, returnType);

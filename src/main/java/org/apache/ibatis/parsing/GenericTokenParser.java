@@ -29,8 +29,18 @@ public class GenericTokenParser {
     this.closeToken = closeToken;
     this.handler = handler;
   }
-
+  /**
+   * @MethodName parse
+   * @Description 寻找 openToken 和 closedToken之间得数据
+   * @param: text
+   * @Return java.lang.String
+   * @Throw
+   * @Author huyongpeng <704725075@qq.com>
+   * @Version V1.0.0
+   * @Since 2019/9/16
+   */
   public String parse(String text) {
+
     if (text == null || text.isEmpty()) {
       return "";
     }
